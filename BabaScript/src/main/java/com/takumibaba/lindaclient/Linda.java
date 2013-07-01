@@ -11,7 +11,7 @@ import java.net.URI;
  */
 public class Linda {
     private String url = "ws://linda.masuilab.org:10010";
-    public static WebSocketIO io;
+    public WebSocketIO io;
     public TupleSpace ts;
     public LindaCallback callback;
 
@@ -21,6 +21,11 @@ public class Linda {
     }
 
     public void connect(){
+        io.connect();
+    }
+
+    public void reConnect(){
+        io = new WebSocketIO(URI.create(url), this);
         io.connect();
     }
 

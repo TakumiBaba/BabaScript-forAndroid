@@ -72,12 +72,11 @@ public class WebSocketIO extends WebSocketClient {
     @Override
     public void onClose(int i, String s, boolean b) {
         Log.d("IO-onClose", s);
-        this.connect();
+        linda.reConnect();
     }
 
     @Override
     public void onError(Exception e) {
-        Log.d("IO-onError", e.toString());
-        this.connect();
+        e.printStackTrace();
     }
 }
