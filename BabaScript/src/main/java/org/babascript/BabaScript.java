@@ -21,7 +21,6 @@ public class BabaScript implements LindaCallback {
         ts = linda.ts;
         linda.callback = this;
         linda.connect();
-
     }
 
     @Override
@@ -35,6 +34,7 @@ public class BabaScript implements LindaCallback {
     @Override
     public void watch(JSONObject json) {
         Log.d("BB:onWatch", json.toString());
+        
     }
 
     @Override
